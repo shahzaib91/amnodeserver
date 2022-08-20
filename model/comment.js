@@ -31,8 +31,8 @@ exports.readComments = (blog_id, res) =>
     const sql = "SELECT * FROM comments WHERE belongs_to=? ORDER BY timestamp DESC";
     db.con.query(sql,[blog_id],(err,result,field)=>{
         if(err)
-            res.status(400).send(err);
+            res.status(400).send({status:false, message:""+err});
         else
-            res.status(200).send(result);
+            res.status(200).send({status:true, message:"Records", records: result});
     })
 }

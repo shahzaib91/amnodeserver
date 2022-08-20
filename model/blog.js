@@ -113,7 +113,7 @@ exports.deleteBlog = (id, res) =>
                 if(result.affectedRows>0)
                     res.status(200).send({status:true, message:result.affectedRows+" row(s) affected!"});
                 else
-                    res.status(404).send({status:false, message:"Not Found!", record: null});
+                    res.status(404).send({status:false, message:"Not Found!"});
             }
         }
     );

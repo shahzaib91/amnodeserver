@@ -19,7 +19,7 @@ exports.createBlog = (req,res) =>
 // read
 exports.readBlog = (req, res) =>
 {
-    blogModel.readBlogs(req.params.id, res);
+    blogModel.readBlog(req.params.id, res);
 }
 
 // read many
