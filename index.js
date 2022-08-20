@@ -17,6 +17,6 @@ app.get('/', (req,res)=>{
 
 // start to express
 app.listen(config.ex_port, (err) => {
-    if (err) console.log(console.log());
+    if (err) console.log(console.log(err));
     console.log("Expressing at port: " + config.ex_port)
 })
