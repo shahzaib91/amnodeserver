@@ -13,19 +13,38 @@ exports.createBlog = (req,res) =>
     }
 
     // create
-    const result = blogModel.modelCreateBlog(req.body.title, req.body.content);
+    blogModel.createBlog(req.body.title, req.body.content, res);
+}
 
-    // handle query error
-    if(!result.status){
+// read
+exports.readBlog = (req, res) =>
+{
+    blogModel.readBlogs(req.params.id, res);
+}
+
+// read many
+exports.readBlogs = (req, res) =>
+{
+    blogModel.readBlogs(res);
+}
+
+// update
+exports.updateBlog = (req,res) =>
+{
+    // validate
+    if(req.body.title=="" || req.body.id=="" || req.body.content==""){
         res.status(400).send({
-            status:false, message: result.message
+            status:false, message:"ID, Title or Content is empty!"
         }); 
         return;
     }
 
-    // return success
-    res.status(200).send({
-        status:false, message:"Blog has been created successfully!"
-    }); 
-    return;
+    // create
+    blogModel.updateBlog(req.body.id, req.body.title, req.body.content, res);
+}
+
+// delete
+exports.deleteBlog = (req,res) =>
+{
+    blogModel.deleteBlog(req.params.id, res);
 }
