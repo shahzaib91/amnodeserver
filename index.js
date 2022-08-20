@@ -9,11 +9,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // test route
-app.get('/', (req,res)=>{
+/*app.get('/', (req,res)=>{
     res.status(200).send({
         status:true, message:"Hello World! This is just another test call."
     });
-})
+})*/
+
+require('./routes/routes')(app);
 
 // start to express
 app.listen(config.ex_port, (err) => {
