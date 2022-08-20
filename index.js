@@ -8,13 +8,7 @@ const app               = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// test route
-/*app.get('/', (req,res)=>{
-    res.status(200).send({
-        status:true, message:"Hello World! This is just another test call."
-    });
-})*/
-
+// routes registration
 require('./routes/routes')(app);
 
 // start to express
