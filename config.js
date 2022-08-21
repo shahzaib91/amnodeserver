@@ -7,5 +7,5 @@ module.exports =
     db_name: "blogdb",
 
     // express config
-    ex_port: 3000
+    ex_port: 8080
 }
