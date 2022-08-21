@@ -51,7 +51,7 @@ exports.readBlog = (id, res) =>
 // read articles function
 exports.readBlogs = (res) =>
 {
-    const sql = "SELECT * FROM articles";
+    const sql = "SELECT * FROM articles ORDER BY id DESC";
     db.con.query
     (
         sql,
