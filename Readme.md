@@ -7,7 +7,7 @@ NPM v8.14.0<br/>
 Step 1: Fork repo: <code>git clone https://github.com/shahzaib91/amnodeserver.git</code><br/>
 Step 2: Prepare: <code>npm install</code><br/>
 Step 3: Edit <code>config.js</code> located in root dir<br/>
-Step 4: Import database file into Mysql
+Step 4: Import database file into Mysql<br/>
 Step 5: Run server app: <code>node index.js</code>
 
 # End-points
